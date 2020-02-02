@@ -7,16 +7,16 @@ Filtrará y generará una carpeta con el nombre de dominio y dentro un archivo.t
 Python 3.*
 
 # Instalación
-Clone el repositorio a su directorio local
+Clone el repositorio a su directorio local:
 
 `git clone https://github.com/mapachemirlo/mapache.git`
 
-Instale las dependencias
+Instale las dependencias:
 
 `pip install -r requirements.txt`
 
 # Uso
-Ejecute
+Ejecute:
 
 `python mapache.py -d dominio`
 
