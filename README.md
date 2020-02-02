@@ -12,10 +12,14 @@ Clone el repositorio a su directorio local
 `git clone https://github.com/mapachemirlo/mapache.git`
 
 Instale las dependencias
+
 `pip install -r requirements.txt`
 
 # Uso
+Ejecute
+
 `python mapache.py -d dominio`
+
 En el directorio de salida que usted eliga se encontrará el archivo de salida recon.txt
 
 # Tools
