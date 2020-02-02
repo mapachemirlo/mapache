@@ -15,7 +15,7 @@ Instale las dependencias
 `pip install -r requirements.txt`
 
 # Uso
-`python mapache -d dominio`
+`python mapache.py -d dominio`
 En el directorio de salida que usted eliga se encontrará el archivo de salida recon.txt
 
 # Tools
