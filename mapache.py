@@ -12,9 +12,14 @@ from os import path
 from pyfiglet import Figlet
 import os
 
-os.system('clear')
-
-#os.system('cls')
+sis_op = sys.platform
+sis_op = sis_op[:3]
+if sis_op == 'lin':
+    os.system('clear')
+elif sis_op == 'win':
+    os.system('cls')
+else:
+    pass
 
 print('')
 custom_fig = Figlet(font='slant')
