@@ -11,6 +11,7 @@ import argparse
 from os import path
 from pyfiglet import Figlet
 import os
+import sys
 
 sis_op = sys.platform
 sis_op = sis_op[:3]
