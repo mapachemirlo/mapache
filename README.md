@@ -1,7 +1,7 @@
 #  mapache
 
-Mapache es un script muy simple para extraer subdominios utilizando 2 de las herramientas que más me gustan en la actualidad.
-Filtrará y generará una carpeta con el nombre de dominio y dentro un archivo.txt con el listado extraído.
+Mapache es un script muy simple para extraer subdominios, filtrar los http/https, información de las cabeceras, screen de los sitios y archivos JavaScripts, utilizando algunas de las herramientas que más me gustan en la actualidad.
+Filtrará y generará una carpeta con el nombre de dominio y su respectiva información recompilada.
 
 # Requisitos
 Python 3.*
