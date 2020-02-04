@@ -6,15 +6,15 @@ Filtrará y generará una carpeta con el nombre de dominio y su respectiva infor
 # Requisitos
 Python 3.*
 
--Assetfinder
+<a href="https://github.com/tomnomnom/assetfinder">- Assetfinder</a>
 
--Subfinder
+<a href="https://github.com/projectdiscovery/subfinder">- Subfinder</a>
 
--Httprobe
+<a href="https://github.com/tomnomnom/httprobe">- Httprobe</a>
 
--Aquatone
+<a href="https://github.com/michenriksen/aquatone">- Aquatone</a>
 
--LinkFinder
+<a href="https://github.com/GerbenJavado/LinkFinder">- LinkFinder</a>
 
 *Todos los ejecutables deberán ser agregados al $PATH, o copiados a `/usr/bin/` (Linux).
 
@@ -34,9 +34,7 @@ Ejecute:
 
 En el directorio de salida que usted eliga se encontrará el archivo de salida recon.txt
 
-# Tools
-https://github.com/projectdiscovery/subfinder 
-
-https://github.com/tomnomnom/assetfinder
+# Nota
+La extracción de archivos .js está en modo prueba.
 
 
