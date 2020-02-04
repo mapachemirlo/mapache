@@ -4,7 +4,7 @@ Mapache es un script muy simple para extraer subdominios, filtrar los http/https
 Filtrará y generará una carpeta con el nombre de dominio y su respectiva información recompilada.
 
 # Requisitos
-Python 3.*
+- Python 3.*
 
 <a href="https://github.com/tomnomnom/assetfinder">- Assetfinder</a>
 
@@ -28,7 +28,7 @@ Instale las dependencias:
 `pip install -r requirements.txt`
 
 # Uso
-Ejecute:
+Muy fácil, ejecute:
 
 `python mapache.py -d dominio`
 
