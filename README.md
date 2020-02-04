@@ -6,6 +6,18 @@ Filtrará y generará una carpeta con el nombre de dominio y dentro un archivo.t
 # Requisitos
 Python 3.*
 
+-Assetfinder
+
+-Subfinder
+
+-Httprobe
+
+-Aquatone
+
+-LinkFinder
+
+*Todos los ejecutables deberán ser agregados al $PATH, o copiados a `/usr/bin/` (Linux).
+
 # Instalación
 Clone el repositorio a su directorio local:
 
