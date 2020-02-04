@@ -32,7 +32,7 @@ Muy fácil, ejecute:
 
 `python mapache.py -d dominio`
 
-En el directorio de salida que usted eliga se encontrará el archivo de salida recon.txt
+En el directorio de salida que usted eliga se encontrará toda la información.
 
 # Nota
 La extracción de archivos .js está en modo prueba.
