@@ -10,6 +10,7 @@ import requests
 import argparse
 from os import path
 from pyfiglet import Figlet
+from progress.bar import Bar
 import os
 import sys
 
@@ -74,11 +75,18 @@ def main():
                 #ASSETFINDER
                 banner_asset = Figlet(font='slant')
                 print(banner_asset.renderText('Assetfinder'))
-                print('      github.com/tomnomnom/assetfider')
-                os.system('assetfinder -subs-only {} > {}'.format(parsito, rc1))               
+                print('            github.com/tomnomnom/assetfinder')
+                print('------------------------------------------------------')
+                bar = Bar(('Extrayendo de ... {}'.format(parsito)), max=10)
+                for e in range(10): 
+                    os.system('assetfinder -subs-only {} > {}'.format(parsito, rc1))
+                    bar.next()
+                bar.finish()
+                print('======================================================')               
                 
                 #SUBFINDER
                 os.system('subfinder -d {} > {}'.format(parsito, rc2))
+                print('======================================================')
             
                 #***************************************** Abrir Archivos-recon ****************************************
                 
@@ -98,6 +106,8 @@ def main():
                 #*************************************** Pasar en limpio ***********************************************
                 
                 path_salida = '{}/{}/recon.txt'.format(path_folder, parsito, parsito)
+                path_vivos = '{}/{}/vivos.txt'.format(path_folder, parsito, parsito)
+                path_js = '{}/{}/infojs.txt'.format(path_folder, parsito, parsito)
 
                 palabras = open(path_arch_all, 'r')
                 archivo2 = open(path_salida, 'a+')
@@ -115,6 +125,44 @@ def main():
                 archivo2.close()
                 os.system('rm -r {}/{}/rc*'.format(path_folder, parsito))
                 os.system('rm -r {}/{}/all.txt'.format(path_folder, parsito))
+
+                #************************************** Filtrados de http/https y armado de .html *************************
+
+                #HTTPROBE
+                print('======================================================')
+                banner_httpr = Figlet(font='slant')
+                print(banner_httpr.renderText('Httprobe'))
+                print('            github.com/tomnomnom/httprobe')
+                print('------------------------------------------------------')
+                arch_vivos = open(path_vivos, 'a+')
+                bar = Bar(('Extrayendo de ... {}'.format(parsito)), max=10)
+                for e in range(10):
+                    os.system('cat {} | httprobe > {}'.format(path_salida, path_vivos))
+                    bar.next()
+                bar.finish()
+                arch_vivos.close()
+
+                #AQUATONE
+                print('======================================================')
+                banner_aqua = Figlet(font='slant')
+                print(banner_aqua.renderText('Aquatone'))
+                os.system('cat {} | aquatone -ports large -out {}/{}'.format(path_salida, path_folder, parsito))
+                print('======================================================')
+
+                #LINKFINDER (Saca todo sucio, tengo que limpiarlo)
+                banner_link = Figlet(font='slant')
+                print(banner_link.renderText('LinkFinder'))
+                print('            github.com/GerbenJavado/LinkFinder')
+                print('------------------------------------------------------')
+                arch_link = open(path_js, 'a+')
+                bar = Bar(('Extrayendo de ... {}'.format(parsito)), max=5)
+                for e in range(5):
+                    os.system('linkfinder.py -i {} -d > {}'.format(dominio, path_js))
+                    bar.next()
+                bar.finish()
+                arch_link.close()
+                print('------------------------------------------------------')
+                print("\nFin del recon\n")
                 
             except:
                 print("*** No hay conectividad ***\n")
