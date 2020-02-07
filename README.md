@@ -27,6 +27,8 @@ Instale las dependencias:
 
 `pip install -r requirements.txt`
 
+Puede agregar el archivo `mapache.py` al $PATH para más comodidad.
+
 # Uso
 Muy fácil, ejecute:
 
