@@ -25,6 +25,8 @@ Clone el repositorio a su directorio local:
 
 Instale las dependencias:
 
+Ingrese al directorio `mapache` y ejecute:
+
 `pip install -r requirements.txt`
 
 Puede agregar el archivo `mapache.py` al $PATH para más comodidad.
