@@ -51,11 +51,11 @@ def main():
             
             try:
                 path_arch_all = '{}/{}/all.txt'.format(path_folder, parsito)
-                archivo = open(path_arch_all, 'r')
+                archv_all = open(path_arch_all, 'r')
                 print("Archivo inicial ya existe, se sobreescribe..\n")
                 
             except:
-                archivo = open(path_arch_all, 'a+')
+                archv_all = open(path_arch_all, 'a+')
                 print("Archivo inicial creado con éxito..\n")
             
             try:
@@ -73,7 +73,7 @@ def main():
                 
                 #**********************************************  TOOLS **************************************************
                 #ASSETFINDER
-                banner_asset = Figlet(font='slant')
+                banner_asset = Figlet(font='small')
                 print(banner_asset.renderText('Assetfinder'))
                 print('            github.com/tomnomnom/assetfinder')
                 print('------------------------------------------------------')
@@ -88,7 +88,7 @@ def main():
                 os.system('subfinder -d {} > {}'.format(parsito, rc2))
                 print('======================================================')
             
-                #***************************************** Abrir Archivos-recon ****************************************
+                #***************************************** Open files - recon ****************************************
                 
                 arch1 = open(rc1, 'r')
                 arch2 = open(rc2, 'r')
@@ -96,12 +96,12 @@ def main():
                 rc1 = arch1.readlines()
                 rc2 = arch2.readlines()
                 
-                archivo.writelines(rc1)
-                archivo.writelines(rc2)
+                archv_all.writelines(rc1)
+                archv_all.writelines(rc2)
                 
                 arch1.close()
                 arch2.close()
-                archivo.close()
+                archv_all.close()
 
                 #*************************************** Pasar en limpio ***********************************************
                 
@@ -110,7 +110,7 @@ def main():
                 path_js = '{}/{}/infojs.txt'.format(path_folder, parsito, parsito)
 
                 palabras = open(path_arch_all, 'r')
-                archivo2 = open(path_salida, 'a+')
+                archv_recon = open(path_salida, 'a+')
 
                 lis = list(palabras)
                 vamo = list(set(lis))
@@ -119,10 +119,10 @@ def main():
                     
                     item = (i.rstrip('\n'))
                     print(item)
-                    archivo2.write(item + '\n')
+                    archv_recon.write(item + '\n')
 
                 palabras.close()
-                archivo2.close()
+                archv_recon.close()
                 os.system('rm -r {}/{}/rc*'.format(path_folder, parsito))
                 os.system('rm -r {}/{}/all.txt'.format(path_folder, parsito))
 
@@ -130,7 +130,7 @@ def main():
 
                 #HTTPROBE
                 print('======================================================')
-                banner_httpr = Figlet(font='slant')
+                banner_httpr = Figlet(font='small')
                 print(banner_httpr.renderText('Httprobe'))
                 print('            github.com/tomnomnom/httprobe')
                 print('------------------------------------------------------')
@@ -144,13 +144,13 @@ def main():
 
                 #AQUATONE
                 print('======================================================')
-                banner_aqua = Figlet(font='slant')
+                banner_aqua = Figlet(font='small')
                 print(banner_aqua.renderText('Aquatone'))
                 os.system('cat {} | aquatone -ports large -out {}/{}'.format(path_salida, path_folder, parsito))
                 print('======================================================')
 
                 #LINKFINDER (Saca todo sucio, tengo que limpiarlo)
-                banner_link = Figlet(font='slant')
+                banner_link = Figlet(font='small')
                 print(banner_link.renderText('LinkFinder'))
                 print('            github.com/GerbenJavado/LinkFinder')
                 print('------------------------------------------------------')
