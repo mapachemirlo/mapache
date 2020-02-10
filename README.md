@@ -36,6 +36,9 @@ Muy fácil, ejecute:
 
 `python mapache.py -d dominio`
 
+Ejemplo: `python mapache.py -d google.com`
+
+
 En el directorio de salida que usted eliga se encontrará toda la información.
 
 # Nota
