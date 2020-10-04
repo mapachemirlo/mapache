@@ -51,6 +51,7 @@ def main():
             
             try:
                 path_arch_all = '{}/{}/all.txt'.format(path_folder, parsito)
+
                 archv_all = open(path_arch_all, 'r')
                 print("Archivo inicial ya existe, se sobreescribe..\n")
                 
@@ -62,6 +63,7 @@ def main():
                 # Usar CD para entrar en la variable path_folder
                 rc1 = '{}/{}/rc1.txt'.format(path_folder, parsito)
                 rc2 = '{}/{}/rc2.txt'.format(path_folder, parsito)
+                rc3 = '{}/{}/rc3.txt'.format(path_folder, parsito)
                 
                 
                 # Solo para probar la conectividad
@@ -72,6 +74,7 @@ def main():
                 #print("\ndominio es: \n" + dominio)
                 
                 #**********************************************  TOOLS **************************************************
+
                 #ASSETFINDER
                 banner_asset = Figlet(font='small')
                 print(banner_asset.renderText('Assetfinder'))
@@ -82,25 +85,42 @@ def main():
                     os.system('assetfinder -subs-only {} > {}'.format(parsito, rc1))
                     bar.next()
                 bar.finish()
-                print('======================================================')               
-                
+                print('======================================================')
+
                 #SUBFINDER
                 os.system('subfinder -d {} > {}'.format(parsito, rc2))
                 print('======================================================')
+
+                #FINDOMAIN
+                banner_asset = Figlet(font='small')
+                print(banner_asset.renderText('Findomain'))
+                print('          https://github.com/Findomain/Findomain')
+                print('-----------------------------------------------------')
+                bar = Bar(('Extrayendo de ... {}'.format(parsito)), max=10)
+                for e in range(10):
+                    os.system('findomain -t {} --quiet > {}'.format(parsito, rc3))
+                    bar.next()
+                bar.finish()
+                print('======================================================') 
             
                 #***************************************** Open files - recon ****************************************
                 
                 arch1 = open(rc1, 'r')
                 arch2 = open(rc2, 'r')
+                arch3 = open(rc2, 'r')
                 
                 rc1 = arch1.readlines()
                 rc2 = arch2.readlines()
+                rc3 = arch3.readlines()
                 
                 archv_all.writelines(rc1)
                 archv_all.writelines(rc2)
+                archv_all.writelines(rc3)
                 
                 arch1.close()
                 arch2.close()
+                arch3.close()
+
                 archv_all.close()
 
                 #*************************************** Pasar en limpio ***********************************************
@@ -123,6 +143,7 @@ def main():
 
                 palabras.close()
                 archv_recon.close()
+                
                 os.system('rm -r {}/{}/rc*'.format(path_folder, parsito))
                 os.system('rm -r {}/{}/all.txt'.format(path_folder, parsito))
 
