@@ -10,6 +10,8 @@ Filtrará y generará una carpeta con el nombre de dominio y su respectiva infor
 
 <a href="https://github.com/projectdiscovery/subfinder">- Subfinder</a>
 
+<a href="https://github.com/Findomain/Findomain">- Findomain</a>
+
 <a href="https://github.com/tomnomnom/httprobe">- Httprobe</a>
 
 <a href="https://github.com/michenriksen/aquatone">- Aquatone</a>
