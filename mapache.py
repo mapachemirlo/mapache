@@ -81,8 +81,11 @@ def main():
                 print('            github.com/tomnomnom/assetfinder')
                 print('------------------------------------------------------')
                 bar = Bar(('Extrayendo de ... {}'.format(parsito)), max=10)
-                for e in range(10): 
-                    os.system('assetfinder -subs-only {} > {}'.format(parsito, rc1))
+                for e in range(10):
+                    try:
+                        os.system('assetfinder -subs-only {} > {}'.format(parsito, rc1))
+                    except:
+                        os.system('assetfinder.exe -subs-only {} > {}'.format(parsito, rc1))
                     bar.next()
                 bar.finish()
                 print('======================================================')
@@ -143,7 +146,7 @@ def main():
 
                 palabras.close()
                 archv_recon.close()
-                
+
                 os.system('rm -r {}/{}/rc*'.format(path_folder, parsito))
                 os.system('rm -r {}/{}/all.txt'.format(path_folder, parsito))
 
